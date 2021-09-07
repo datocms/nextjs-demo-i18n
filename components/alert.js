@@ -1,41 +1,45 @@
-import Container from './container'
-import cn from 'classnames'
+import Container from "./container";
+import cn from "classnames";
+import i18n from "../lib/i18n";
+import { useRouter } from "next/router";
 
 export default function Alert({ preview }) {
+  const { locale } = useRouter();
+
   return (
     <div
-      className={cn('border-b', {
-        'bg-accent-7 border-accent-7 text-white': preview,
-        'bg-accent-1 border-accent-2': !preview,
+      className={cn("border-b", {
+        "bg-accent-7 border-accent-7 text-white": preview,
+        "bg-accent-1 border-accent-2": !preview,
       })}
     >
       <Container>
         <div className="py-2 text-center text-sm">
           {preview ? (
             <>
-              This is page is showing draft content.{' '}
+              {i18n.alert.draftContent[locale]}{" "}
               <a
                 href="/api/exit-preview"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >
-                Click here
-              </a>{' '}
-              to exit preview mode.
+                {i18n.alert.clickCta[locale]}
+              </a>{" "}
+              {i18n.alert.exitPreview[locale]}
             </>
           ) : (
             <>
-              This is page is showing published content.{' '}
+              {i18n.alert.publishedContent[locale]}{" "}
               <a
                 href="/api/preview"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >
-                Click here
-              </a>{' '}
-              to enter preview mode!
+                {i18n.alert.clickCta[locale]}
+              </a>{" "}
+              {i18n.alert.enterPreview[locale]}
             </>
           )}
         </div>
       </Container>
     </div>
-  )
+  );
 }
