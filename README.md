@@ -1,14 +1,9 @@
-# A Blog example using Next.js and DatoCMS
+# A multi-language blog example using Next.js and DatoCMS
 
-This example showcases a Next.js Blog using [DatoCMS](https://www.datocms.com/) as the data source. It fully supports [Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode) with [DatoCMS real-time updates](https://www.datocms.com/docs/next-js/real-time-updates).
+This example showcases a Next.js multi-language blog using [DatoCMS](https://www.datocms.com/) as the data source. It fully supports [Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode) with [DatoCMS real-time updates](https://www.datocms.com/docs/next-js/real-time-updates).
 
-The purpose of this repo is to have a quick start reference that can be set up with the "one-click" button below.
-
-## Demo
-
-Have a look at the end result live:
-
-### [https://nextjs-demo-i18n.vercel.app/](https://nextjs-demo-i18n.vercel.app/)
+The purpose of this repo is to have a quick start reference that can be set up with the "one-click" button below. This is what the end result looks like:
+#### [https://nextjs-demo-i18n.vercel.app/](https://nextjs-demo-i18n.vercel.app/)
 
 ## How to use
 
@@ -20,7 +15,7 @@ Have a look at the end result live:
 
 3. Let DatoCMS set everything up for you clicking this button:
 
-[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/deploy?repo=datocms/nextjs-demo-i18n)
+  [![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/deploy?repo=datocms/nextjs-demo-i18n)
 
 ### Local setup
 
@@ -41,7 +36,7 @@ cp .env.example .env
 Then set each variable on `.env`:
 
 - `NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN` should be the API token you just copied.
-- `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode).
+- `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode). This token will be used for the preview mode - read on to know more.
 
 Your `.env` file should look like this:
 
