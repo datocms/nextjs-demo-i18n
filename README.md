@@ -8,7 +8,7 @@ The purpose of this repo is to have a quick start reference that can be set up w
 
 Have a look at the end result live:
 
-### [https://nextjs-demo-bay.vercel.app/](https://nextjs-demo-bay.vercel.app/)
+### [https://nextjs-demo-i18n.vercel.app/](https://nextjs-demo-i18n.vercel.app/)
 
 ## How to use
 
