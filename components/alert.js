@@ -1,9 +1,11 @@
 import Container from "./container";
 import cn from "classnames";
+import i18n from "../lib/i18n";
 import { useRouter } from "next/router";
 
 export default function Alert({ preview }) {
   const { locale } = useRouter();
+
   return (
     <div
       className={cn("border-b", {
@@ -15,33 +17,25 @@ export default function Alert({ preview }) {
         <div className="py-2 text-center text-sm">
           {preview ? (
             <>
-              {locale == "en"
-                ? "This is page is showing draft content."
-                : "Questa pagina sta mostrando il contenuto bozza."}{" "}
+              {i18n.alert.draftContent[locale]}{" "}
               <a
                 href="/api/exit-preview"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >
-                {locale == "en" ? "Click here" : "Clicca qui"}
+                {i18n.alert.clickCta[locale]}
               </a>{" "}
-              {locale == "en"
-                ? "to exit preview mode."
-                : "per uscire dalla modalità di anteprima."}
+              {i18n.alert.exitPreview[locale]}
             </>
           ) : (
             <>
-              {locale == "en"
-                ? "This is page is showing published content."
-                : "Questa pagina mostra i contenuti pubblicati."}{" "}
+              {i18n.alert.publishedContent[locale]}{" "}
               <a
                 href="/api/preview"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >
-                {locale == "en" ? "Click here" : "Clicca qui"}
+                {i18n.alert.clickCta[locale]}
               </a>{" "}
-              {locale == "en"
-                ? "to enter preview mode!"
-                : "per entrare in modalità anteprima!"}
+              {i18n.alert.enterPreview[locale]}
             </>
           )}
         </div>
