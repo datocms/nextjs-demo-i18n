@@ -1,5 +1,5 @@
 {
-  "name": "cms-datocms",
+  "name": "datocms-demo-nextjs-i18n",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
