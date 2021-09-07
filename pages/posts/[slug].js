@@ -28,7 +28,7 @@ export async function getStaticPaths({ locales }) {
 }
 
 export async function getStaticProps({ params, preview = false, locale }) {
-  const formatedLocale = locale.split("-")[0];
+  const formattedLocale = locale.split("-")[0];
   const graphqlRequest = {
     query: `
       query PostBySlug($slug: String) {
@@ -37,7 +37,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
             ...metaTagsFragment
           }
         }
-        post(locale: ${formatedLocale}, filter: {slug: {eq: $slug}}) {
+        post(locale: ${formattedLocale}, filter: {slug: {eq: $slug}}) {
           seo: _seoMetaTags {
             ...metaTagsFragment
           }
@@ -74,7 +74,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
           }
         }
 
-        morePosts: allPosts(locale: ${formatedLocale}, orderBy: date_DESC, first: 2, filter: {slug: {neq: $slug}}) {
+        morePosts: allPosts(locale: ${formattedLocale}, orderBy: date_DESC, first: 2, filter: {slug: {neq: $slug}}) {
           title
           slug
           excerpt

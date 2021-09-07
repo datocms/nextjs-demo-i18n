@@ -12,7 +12,7 @@ import LanguageBar from "../components/language-bar";
 
 
 export async function getStaticProps({preview, locale}) {
-  const formatedLocale = locale.split("-")[0];
+  const formattedLocale = locale.split("-")[0];
   const graphqlRequest = {
     query: `
       {
@@ -26,7 +26,7 @@ export async function getStaticProps({preview, locale}) {
             ...metaTagsFragment
           }
         }
-        allPosts(locale: ${formatedLocale}, orderBy: date_DESC, first: 20) {
+        allPosts(locale: ${formattedLocale}, orderBy: date_DESC, first: 20) {
           title
           slug
           excerpt
