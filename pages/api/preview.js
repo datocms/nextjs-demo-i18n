@@ -1,3 +1,5 @@
+import url from 'url';
+
 export default async (req, res) => {
   // Please set the NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET env variable
   // on Vercel/Netlify, or everyone will be able to enter Preview Mode and
@@ -14,7 +16,8 @@ export default async (req, res) => {
   // Enable Preview Mode by setting the cookies
   res.setPreviewData({});
 
-  // Redirect to the homepage
-  res.writeHead(307, { Location: "/" });
-  res.end();
+  const uri = url.parse(req.query.page || req.query.slug || '/', true);
+  const sanitizedUrl = `${uri.pathname}${uri.search || ''}`;
+
+  res.redirect(sanitizedUrl);
 };
